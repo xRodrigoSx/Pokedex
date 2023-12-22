@@ -11,9 +11,17 @@
 
 <body>
     <h1>Pokedex</h1>
-    <div class="pokeContainer" id="pokeContainer">
-           
+
+    <div id="searchBar">
+        <i id="searchIcon" class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search any pokemon">
+        <i id="searchIcon" class="fas fa-search" onclick="filterPokemons()"></i>
     </div>
+
+    <div class="pokeContainer" id="pokeContainer">
+
+    </div>
+
     <script src="script.js"></script>
 </body>
 
