@@ -57,7 +57,7 @@ const createPokemonCard = (poke) => {
         </div>
         `
 
-    card.InnerHTML = pokemonInnerHTML
+    card.innerHTML = pokemonInnerHTML
 
     pokeContainer.appendChild(card)
 }
