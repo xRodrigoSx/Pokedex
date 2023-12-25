@@ -1,20 +1,23 @@
 const pokeContainer = document.querySelector("#pokeContainer");
 const pokemonCount = 151
 const colors = {
-    fire: '#FDDFDF',
     grass: '#DEFDE0',
-    electric: '#FCF7DE',
     water: '#DEF3FD',
-    ground: '#f4e7da',
-    rock: '#d5d5d4',
-    fairy: '#fceaff',
-    poison: '#98d7a5',
-    bug: '#f8d5a3',
-    dragon: '#97b3e6',
-    psychic: '#eaeda1',
+    fire: '#FDDFDF',
+    electric: '#FCF7DE',
+    normal: '#F5F5F5',
+    bug: '#F8D5A3',
+    poison: '#98D7A5',
+    ground: '#F4E7DA',
+    rock: '#D5D5D4',
+    fairy: '#FCEAFF',
+    dragon: '#97B3E6',
+    psychic: '#EAEdA1',
     flying: '#F5F5F5',
     fighting: '#E6E0D4',
-    normal: '#F5F5F5'
+    steel: '',
+    ice: '',
+    ghost: ''
 }
 
 const mainTypes = Object.keys(colors);
@@ -41,23 +44,43 @@ const createPokemonCard = (poke) => {
     const id = poke.id.toString().padStart(3, '0')
 
     const pokeTypes = poke.types.map(type => type.type.name)
-    const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1)
+    var type = mainTypes.find(type => pokeTypes.indexOf(type) == 0)
+    var type2 = mainTypes.find(type => pokeTypes.indexOf(type) > 0)
     const color = colors[type]
-
+    
     card.style.backgroundColor = color
 
-    const pokemonInnerHTML = `
+    if(type2 === type || type2 === undefined){
+        var pType = `<small class="type"><span>${type}</span></small>`
+    }else{
+        pType = `<small class="type"><span>${type}</span></small>
+                 <small class="type"><span>${type2}</span></small>`
+    }
+    
+    var pokemonInnerHTML = `
+    <a class="detalhes" href="/detail/${id}">
+    <span class="number">#${id}</span>
         <div class="imgContainer">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png" alt="${name}">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png" alt="${name}">
         </div>
         <div class="info">
-            <span class="number">#${id}</span>
-            <h3 class="name">${name}</h3>
-            <small class="type">Type: <span>${type}</span></small>
-        </div>
-        `
+        <h3 class="name">${name}</h3>
+        ${pType}
+            </div>
+            </a>
+            ` 
 
     card.innerHTML = pokemonInnerHTML
+
+    // Adiciona um evento de mouseover para aumentar levemente o tamanho quando o mouse estiver sobre o card
+    card.addEventListener('mouseover', () => {
+        card.classList.add('highlight');
+    });
+
+    // Adiciona um evento de mouseout para remover a classe de destaque quando o mouse sair do card
+    card.addEventListener('mouseout', () => {
+        card.classList.remove('highlight');
+    });
 
     pokeContainer.appendChild(card)
 }
@@ -70,14 +93,16 @@ const filterPokemons = () => {
     pokemons.forEach(pokemon => {
       const name = pokemon.querySelector('.name').innerText.toLowerCase();
       const id = pokemon.querySelector('.number').innerText.slice(1);
-      const type = pokemon.querySelector('.type span').innerText.toLowerCase();
+      const type = pokemon.querySelector('.type span:nth-child(1)').innerText.toLowerCase();
+      const type2Element = pokemon.querySelector('.type span:nth-child(2)');
+      const type2 = type2Element ? type2Element.innerText.toLowerCase() : '';
 
-       if (name.includes(filter) || id.includes(filter) || type.includes(filter)) {
+       if (name.includes(filter) || id.includes(filter) || type.includes(filter) || type2.includes(filter)) {
         pokemon.style.display = 'block';
       } else {
         pokemon.style.display = 'none';
       }
     });
   };
-
+  
 fetchPokemons()

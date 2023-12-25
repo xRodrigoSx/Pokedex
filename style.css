@@ -8,11 +8,15 @@
 }
 
 body {
-    background: linear-gradient(to right, #d4d3dd, #efefbb);
+    background: linear-gradient(to right, #cccade, #ececaa);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+header {
+    background-color: black;
 }
 
 #searchBar {
@@ -57,14 +61,29 @@ h1 {
 
 .pokemon {
     background-color: #eee;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
-    margin: 10px;
+    margin: 15px;
     padding: 20px;
     text-align: center;
 }
 
+.pokemon:hover {
+    cursor: pointer;
+    transition: transform 0.35s ease-out;
+}
+
+.pokemon.highlight {
+    transform: scale(1.15);
+}
+
+.detalhes {
+    color: black;
+    text-decoration: none;
+}
+
 .imgContainer {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +108,41 @@ h1 {
     font-size: 0.8rem;
 }
 
+.type {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 2px 13px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
 .паmе {
     margin: 15px 0 7px;
     letter-spacing: 1.5px;
+}
+
+#pokemonDetails {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pokemonDetails img {
+    max-width: 200px;
+    height: auto;
+}
+
+#pokemonDetailsContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#pokemonDetails p {
+    margin: 10px 0;
+}
+
+#pokemonDetails button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }
