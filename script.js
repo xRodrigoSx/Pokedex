@@ -60,7 +60,7 @@ const createPokemonCard = (poke) => {
     }
 
     var pokemonInnerHTML = `
-    <a class="detalhes" href="/detail/${id}">
+    <a class="detalhes" href="/details.html?id=${poke.id}">
     <span class="number">#${id}</span>
         <div class="imgContainer">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png" alt="${name}">
