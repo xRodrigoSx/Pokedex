@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.fire {
+    background-color: #FFA07A;
+}
+
+.water {
+    background-color: #ADD8E6;
+}
+
+.grass {
+    background-color: #98FB98;
+}
+
+.name {
+    justify-content: space-between;
+    display: flex;
+    font-size: 28px;
+}
+
+button {
+    font-size: 28px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.tipo {
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 2px 13px;
+    border-radius: 8px;
+    font-weight: bold;
+    max-width: fit-content;
+}
+
+.pokemon {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    height: 480px;
+}
