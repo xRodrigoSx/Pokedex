@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Get the background color based on the main type
         const color = colors[mainType] || '#ffffff';
 
+        document.body.style.backgroundColor = color;
+
         // Create HTML content for Pokemon details
         const pokemonDetailsHTML = `
         <div style="background-color: ${color}; padding: 20px;">
@@ -47,6 +49,105 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name}">
         </div>
         </div>
+
+        <footer style="background-color: purple; padding: 20px;">
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+            <p>O</p>
+        </footer>
         `;
 
         // Display details in the container
