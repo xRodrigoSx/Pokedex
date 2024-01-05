@@ -5,19 +5,17 @@
     font-family: 'Lato', sans-serif;
 }
 
-.fire {
-    background-color: #FFA07A;
+header {
+    background-color: black;
+    padding: 10px 0px 10px 20px;
 }
 
-.water {
-    background-color: #ADD8E6;
-}
-
-.grass {
-    background-color: #98FB98;
+.logo img{
+    height: 45px;
 }
 
 .name {
+    margin-top: -8px;
     justify-content: space-between;
     display: flex;
     font-size: 28px;
@@ -27,6 +25,11 @@ button {
     font-size: 28px;
     padding-left: 5px;
     padding-right: 5px;
+}
+
+button img {
+    width: 32px;
+    background-color: transparent;
 }
 
 .tipo {
@@ -41,11 +44,10 @@ button {
 .pokemon {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 20px;
     height: 480px;
 }
 
 footer {
-    
     border-radius: 64px 64px 0px 0px;
 }
