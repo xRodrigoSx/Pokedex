@@ -49,30 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         </div>
         
-        <footer style="background-color: #290b47; padding: 20px;">
+        <footer style="background-color: #290b47">
         <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         </footer>
         `;
 

@@ -6,19 +6,21 @@
 }
 
 header {
+    width: 100%;
+    height: 30px;
     background-color: black;
-    padding: 10px 0px 10px 20px;
+    padding: 4px 10px;
 }
 
 .logo img{
-    height: 35px;
+    height: 20px;
 }
 
 .name {
     margin-top: -8px;
     justify-content: space-between;
     display: flex;
-    font-size: 28px;
+    font-size: 18px;
 }
 
 button {
@@ -28,14 +30,14 @@ button {
 }
 
 button img {
-    width: 32px;
+    width: 12px;
     background-color: transparent;
 }
 
 .tipo {
-    font-size: 20px;
+    font-size: 12px;
     background-color: rgba(0, 0, 0, 0.15);
-    padding: 2px 13px;
+    padding: 2px 8px;
     border-radius: 8px;
     font-weight: bold;
     max-width: fit-content;
@@ -43,11 +45,11 @@ button img {
 
 .pokemon {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    height: 480px;
+    margin-top: -20px;
+    height: 240px;
 }
 
 footer {
-    border-radius: 64px 64px 0px 0px;
+    width: auto;
+    border-radius: 32px 32px 0px 0px;
 }
