@@ -43,13 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2>${data.name[0].toUpperCase() + data.name.slice(1)}</h2>
         <p>#${data.id}</p>
         </div>
-        <p>${data.types.map(type => `<span class="tipo">${type.type.name}</span>`).join('')}</p>
+        <p>${data.types.map(type => `<span class="tipo"  style="background-color: ${color}">${type.type.name}</span>`).join('')}</p>
         <div class="pokemon">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name}">
         </div>
         </div>
         
         <footer style="background-color: #290b47">
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
