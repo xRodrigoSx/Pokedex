@@ -30,11 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const mainType = data.types[0].type.name;
+        const secType = data.types[1].type.name;
 
         // Get the background color based on the main type
         const color = colors[mainType] || '#ffffff';
+        const color2 = colors[secType] || '#ffffff';
 
-        document.body.style.backgroundColor = color;
+        if (secType === mainType || secType === undefined) {
+            var pType = `<p class="tipo" style="background-color: ${color}">${mainType}</p>`;
+        } else {
+            pType = `<p><span class="tipo" style="background-color: ${color} opacity: 1">${mainType}</span>
+            <span class="tipo" style="background-color: ${color2}">${secType}</span></p>
+            `;
+        }
 
         // Create HTML content for Pokemon details
         const pokemonDetailsHTML = `
@@ -43,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2>${data.name[0].toUpperCase() + data.name.slice(1)}</h2>
         <p>#${data.id}</p>
         </div>
-        <p>${data.types.map(type => `<span class="tipo"  style="background-color: ${color}">${type.type.name}</span>`).join('')}</p>
+        ${pType}
         <div class="pokemon">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name}">
         </div>
