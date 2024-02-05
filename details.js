@@ -66,6 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <br>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         </footer>
         `;
 
