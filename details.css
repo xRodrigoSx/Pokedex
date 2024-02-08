@@ -21,7 +21,7 @@ header {
     margin-top: -12px;
     justify-content: space-between;
     display: flex;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .id {
@@ -44,7 +44,6 @@ button img {
     background-color: rgba(0, 0, 0, 0.15);
     padding: 2px 8px;
     border-radius: 8px;
-    font-weight: bold;
     max-width: fit-content;
 }
 
