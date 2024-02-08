@@ -135,12 +135,167 @@ h1 {
 
 @media (min-width: 787px) and (max-width: 1080px) {}
 
-@media (min-width: 1081px) and (max-width: 1280px) {}
+/* Tela Senac */
+@media (min-width: 1081px) and (max-width: 1280px) {
+    header {
+        height: 50px;
+        padding: 4px 20px;
+    }
+    
+    .logo img{
+        height: 40px;
+        margin: -1px;
+    }
+    
+    h1 {
+        font-size:xx-large;
+    }
+    
+    #searchInput {
+        width: 36rem;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .pokemon {
+        border-radius: 16px;
+        margin: 15px;
+        padding: 20px;
+        width: 10.4rem;
+        height: 16.64rem;
+    }
+    
+    .number {
+        font-size: 1rem;
+    }
+    
+    .imgContainer {
+        margin-top: 20px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    .imgContainer img {
+        scale: 1.1;
+    }
+    
+    .info {
+        margin-top: 15px;
+        font-size: medium;
+    }
+    
+    .type {
+        font-size: medium;
+        padding: 2px 8px;
+    }
+}
 
-@media (min-width: 1281px) and (max-width: 1440px) {}
+@media (min-width: 1281px) and (max-width: 1440px) {
+    header {
+        height: 60px;
+        padding: 4px 20px;
+    }
+    
+    .logo img{
+        height: 45px;
+    }
+    
+    h1 {
+        font-size:xx-large;
+    }
+    
+    #searchInput {
+        width: 36rem;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .pokemon {
+        border-radius: 16px;
+        margin: 15px;
+        padding: 20px;
+        width: 10.4rem;
+        height: 16.64rem;
+    }
+    
+    .number {
+        font-size: 1rem;
+    }
+    
+    .imgContainer {
+        margin-top: 20px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    .imgContainer img {
+        scale: 1.1;
+    }
+    
+    .info {
+        margin-top: 15px;
+        font-size: medium;
+    }
+    
+    .type {
+        font-size: medium;
+        padding: 2px 8px;
+    }
+}
 
 /* Tela Trabalho */
-@media (min-width: 1441px) and (max-width: 1710px) {}
+@media (min-width: 1441px) and (max-width: 1710px) {
+    header {
+        height: 60px;
+        padding: 4px 20px;
+    }
+    
+    .logo img{
+        height: 45px;
+    }
+    
+    h1 {
+        font-size:xx-large;
+    }
+    
+    #searchInput {
+        width: 36rem;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .pokemon {
+        border-radius: 16px;
+        margin: 15px;
+        padding: 20px;
+        width: 10.4rem;
+        height: 16.64rem;
+    }
+    
+    .number {
+        font-size: 1rem;
+    }
+    
+    .imgContainer {
+        margin-top: 20px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    .imgContainer img {
+        scale: 1.1;
+    }
+    
+    .info {
+        margin-top: 15px;
+        font-size: medium;
+    }
+    
+    .type {
+        font-size: medium;
+        padding: 2px 8px;
+    }
+}
 
 /* Tela casa */
 @media (min-width: 1711px) and (max-width: 1920px) {

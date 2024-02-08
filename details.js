@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="background-color: ${color}; padding: 20px;">
         <div class="name">
         <h2>${data.name[0].toUpperCase() + data.name.slice(1)}</h2>
-        <p>#${data.id}</p>
+        <p class="id">#${data.id}</p>
         </div>
         ${pType}
         <div class="pokemon">
