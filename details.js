@@ -46,43 +46,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create HTML content for Pokemon details
         const pokemonDetailsHTML = `
-        <div style="background-color: ${color}; padding: 20px;">
-        <div class="name">
-        <h2>${data.name[0].toUpperCase() + data.name.slice(1)}</h2>
-        <p class="id">#${data.id}</p>
-        </div>
-        ${pType}
-        <div class="pokemon">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name}">
-        </div>
-        </div>
+        <div class="body" style="background-color: ${color};">
+            <div style="padding: 20px;">
+            <div class="name">
+            <h2>${data.name[0].toUpperCase() + data.name.slice(1)}</h2>
+            <p class="id">#${data.id}</p>
+            </div>
+            ${pType}
+            <div class="pokemon">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name}">
+            </div>
+            </div>
         
-        <footer style="background-color: #290b47">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        </footer>
+            <footer style="background-color: #290b47">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            </footer>
+        </div>
         `;
 
         // Display details in the container
