@@ -19,6 +19,7 @@ header {
 
 .name {
     margin-top: -12px;
+    margin-bottom: 5px;
     justify-content: space-between;
     display: flex;
     font-size: 14px;
@@ -51,7 +52,7 @@ button img {
     display: flex;
     justify-content: center;
     margin: 0px 0px;
-    height: 240px;
+    height: 200px;
 }
 
 footer {
