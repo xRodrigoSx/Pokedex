@@ -74,12 +74,10 @@ const createPokemonCard = (poke) => {
 
     card.innerHTML = pokemonInnerHTML
 
-    // Adiciona um evento de mouseover para aumentar levemente o tamanho quando o mouse estiver sobre o card
     card.addEventListener('mouseover', () => {
         card.classList.add('highlight');
     });
 
-    // Adiciona um evento de mouseout para remover a classe de destaque quando o mouse sair do card
     card.addEventListener('mouseout', () => {
         card.classList.remove('highlight');
     });

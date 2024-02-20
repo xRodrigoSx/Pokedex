@@ -13,7 +13,7 @@ header {
     padding: 3px 10px;
 }
 
-.logo img{
+.logo img {
     height: 20px;
 }
 
@@ -48,6 +48,13 @@ button img {
     max-width: fit-content;
 }
 
+.tipo img {
+    height: 15px;
+    margin-bottom: -3.5px;
+    margin-left: -5px;
+    margin-right: 3px;
+}
+
 .pokemon {
     display: flex;
     justify-content: center;
@@ -70,23 +77,66 @@ footer {
 @media (min-width: 1081px) and (max-width: 1280px) {
     header {
         height: 50px;
-        padding: 4px 20px;
+        padding: 4px 15px;
     }
-    
-    .logo img{
+
+    .logo img {
         height: 40px;
         margin: -1px;
+    }
+
+    .name {
+        padding: 10px;
+        font-size: xx-large;
+    }
+
+    .tipo {
+        font-size: xx-large;
+        border-radius: 20px;
+        padding: 2px 15px 2px 15px;
+        margin-left: 10px;
+    }
+
+    .tipo img {
+        height: 30px;
+        margin-right: 9px;
+    }
+
+    .pokemon {
+        height: 500px;
     }
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
     header {
         height: 60px;
-        padding: 4px 20px;
+        padding: 4px 15px;
     }
-    
-    .logo img{
+
+    .logo img {
         height: 45px;
+        margin: 2px;
+    }
+
+    .name {
+        padding: 10px;
+        font-size: xx-large;
+    }
+
+    .tipo {
+        font-size: xx-large;
+        border-radius: 20px;
+        padding: 2px 15px 2px 15px;
+        margin-left: 10px;
+    }
+
+    .tipo img {
+        height: 30px;
+        margin-right: 9px;
+    }
+
+    .pokemon {
+        height: 500px;
     }
 }
 
@@ -94,11 +144,33 @@ footer {
 @media (min-width: 1441px) and (max-width: 1710px) {
     header {
         height: 60px;
-        padding: 4px 20px;
+        padding: 4px 15px;
     }
-    
-    .logo img{
-        height: 45px;
+
+    .logo img {
+        height: 40px;
+        margin: 3px;
+    }
+
+    .name {
+        padding: 10px;
+        font-size: xx-large;
+    }
+
+    .tipo {
+        font-size: xx-large;
+        border-radius: 20px;
+        padding: 2px 15px 2px 15px;
+        margin-left: 10px;
+    }
+
+    .tipo img {
+        height: 30px;
+        margin-right: 9px;
+    }
+
+    .pokemon {
+        height: 500px;
     }
 }
 
@@ -106,11 +178,34 @@ footer {
 @media (min-width: 1711px) and (max-width: 1920px) {
     header {
         height: 60px;
-        padding: 4px 20px;
+        padding: 4px 15px;
     }
-    
-    .logo img{
-        height: 45px;
+
+    .logo img {
+        height: 40px;
+        margin: 3px;
+    }
+
+    .name {
+        padding: 10px;
+        font-size: xx-large;
+    }
+
+    .tipo {
+        font-size: xx-large;
+        border-radius: 20px;
+        padding: 2px 15px 2px 15px;
+        margin-left: 10px;
+    }
+
+    .tipo img {
+        height: 30px;
+        margin-right: 9px;
+    }
+
+    .pokemon {
+        height: 500px;
     }
 }
+
 @media (orientation: landscape) {}

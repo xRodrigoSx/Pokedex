@@ -1,8 +1,6 @@
-// details.js
 document.addEventListener('DOMContentLoaded', () => {
     const detailsContainer = document.getElementById('detailsContainer');
 
-    // Function to fetch and display Pokemon details
     const showPokemonDetails = async (id) => {
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
         const resp = await fetch(url);
@@ -29,38 +27,68 @@ document.addEventListener('DOMContentLoaded', () => {
             ice: '#87f3e4'
         }
 
-        const mainType = data.types[0].type.name;
-        const secType = data.types[1].type.name;
+        const imgs = {
+            electric: 'img/Elétrico.png',
+            fighting: 'img/Lutador.png',
+            psychic: 'img/Psíquico.png',
+            ground: 'img/Terra.png',
+            normal: 'img/Normal.png',
+            flying: 'img/Voador.png',
+            poison: 'img/Veneno.png',
+            dragon: 'img/Dragão.png',
+            steel: 'img/Aço.png',
+            grass: 'img/Grama.png',
+            fairy: 'img/Fada.png',
+            ghost: 'img/Fantasma.png',
+            water: 'img/Água.png',
+            rock: 'img/Pedra.png',
+            fire: 'img/Fogo.png',
+            dark: 'img/Sombrio.png',
+            bug: 'img/Inseto.png',
+            ice: 'img/Gelo.png'
+        }
 
-        // Get the background color based on the main type
+        function temSec() {
+            if (data.types.length > 1 && data.types[1].type && data.types[1].type.name) {
+                return data.types[1].type.name;
+            } else {
+                return null
+            }
+        }
+        let mainType = data.types[0].type.name;
+        let secType = temSec();
+
+
+
         const color = colors[mainType] || '#ffffff';
         const color2 = colors[secType] || '#ffffff';
+        const img1 = imgs[mainType];
+        const img2 = imgs[secType];
 
-        if (secType === mainType || secType === undefined) {
-            var pType = `<p class="tipo" style="background-color: ${color}">${mainType}</p>`;
+        if (mainType == secType || secType == undefined) {
+            var pType = `<p><span class="tipo" style="background-color: ${color} opacity: 1"><img class="imgtype" src="${img1}">${mainType}</span></p>`;
         } else {
-            pType = `<p><span class="tipo" style="background-color: ${color} opacity: 1">${mainType}</span>
-            <span class="tipo" style="background-color: ${color2}">${secType}</span></p>
+            pType = `<p><span class="tipo" style="background-color: ${color} opacity: 1"><img src="${img1}">${mainType}</span>
+            <span class="tipo" style="background-color: ${color2}"><img class="imgtype" src="${img2}" alt="tipo" height="15px">${secType}</span></p>
             `;
         }
 
-        // Create HTML content for Pokemon details
         const pokemonDetailsHTML = `
         <div class="body" style="background-color: ${color};">
-            <div style="padding: 20px;">
-            <div class="name">
-            <h2>${data.name[0].toUpperCase() + data.name.slice(1)}</h2>
-            <p class="id">#${data.id}</p>
-            </div>
-            ${pType}
-            <div class="pokemon">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name}">
-            </div>
-            </div>
+        <div class="container">
+        <div style="padding: 20px;">
+        <div class="name">
+        <h2>${data.name[0].toUpperCase() + data.name.slice(1)}</h2>
+        <p class="id">#${data.id}</p>
+        </div>
+        ${pType}
+        <div class="pokemon">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name}">
+        </div>
+        </div>
+        </div>
         
             <footer style="background-color: #290b47">
-            <br>
-            <br>
             <br>
             <br>
             <br>
@@ -87,19 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         `;
 
-        // Display details in the container
         detailsContainer.innerHTML = pokemonDetailsHTML;
     };
 
-    // Extract Pokemon ID from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const pokemonId = urlParams.get('id');
 
-    // Show details if Pokemon ID is present in the URL
     if (pokemonId) {
         showPokemonDetails(pokemonId);
     } else {
-        // Handle the case where there is no Pokemon ID in the URL
         console.error('Pokemon ID not found in the URL');
     }
 });
