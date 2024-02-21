@@ -105,49 +105,49 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>HP</span>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hp}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${hp/2}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${hp/2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Attack</span>
             <span>&nbsp;&nbsp;&nbsp;${attack}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${attack/2}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${attack/2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Defense</span>
             <span>${defense}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${defense/2}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${defense/2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Speed</span>
             <span>&nbsp;&nbsp;&nbsp;${speed}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${speed/2}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${speed/2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Sp. Atk</span>
             <span>&nbsp;&nbsp;${sp_attack}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${sp_attack/2}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${sp_attack/2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Sp. Def</span>
             <span>&nbsp;${sp_defense}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${sp_defense/2}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${sp_defense/2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Total</span>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${total}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${total/12}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${total/15}%; background-color: ${color};"></div>
             </div>
             </div>
             </div>
