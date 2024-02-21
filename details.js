@@ -73,8 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
+        const hp = data.stats[0].base_stat;
+        const attack = data.stats[1].base_stat;
+        const defense = data.stats[2].base_stat;
+        const sp_attack = data.stats[3].base_stat;
+        const sp_defense = data.stats[4].base_stat;
+        const speed = data.stats[5].base_stat;
+        const total = hp + attack + defense + speed + sp_attack + sp_defense;
+
         const pokemonDetailsHTML = `
-        <div class="body" style="background-color: ${color};">
+        <div class="body" style="background-color: ${color}; opacity: 1;">
         <div class="container">
         <div style="padding: 20px;">
         <div class="name">
@@ -91,10 +99,59 @@ document.addEventListener('DOMContentLoaded', () => {
             <footer style="background-color: #290b47">
             <br>
             <br>
+            <div class="base_stats">
+            <h3>Base stats</h2>
             <br>
-            <br>
-            <br>
-            <br>
+            <div class="stat">
+            <span>HP</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hp}</span>
+            <div class="bar-container">
+            <div class="bar" style="width: ${hp/2}%; background-color: ${color};"></div>
+            </div>
+            </div>
+            <div class="stat">
+            <span>Attack</span>
+            <span>&nbsp;&nbsp;&nbsp;${attack}</span>
+            <div class="bar-container">
+            <div class="bar" style="width: ${attack/2}%; background-color: ${color};"></div>
+            </div>
+            </div>
+            <div class="stat">
+            <span>Defense</span>
+            <span>${defense}</span>
+            <div class="bar-container">
+            <div class="bar" style="width: ${defense/2}%; background-color: ${color};"></div>
+            </div>
+            </div>
+            <div class="stat">
+            <span>Speed</span>
+            <span>&nbsp;&nbsp;&nbsp;${speed}</span>
+            <div class="bar-container">
+            <div class="bar" style="width: ${speed/2}%; background-color: ${color};"></div>
+            </div>
+            </div>
+            <div class="stat">
+            <span>Sp. Atk</span>
+            <span>&nbsp;&nbsp;${sp_attack}</span>
+            <div class="bar-container">
+            <div class="bar" style="width: ${sp_attack/2}%; background-color: ${color};"></div>
+            </div>
+            </div>
+            <div class="stat">
+            <span>Sp. Def</span>
+            <span>&nbsp;${sp_defense}</span>
+            <div class="bar-container">
+            <div class="bar" style="width: ${sp_defense/2}%; background-color: ${color};"></div>
+            </div>
+            </div>
+            <div class="stat">
+            <span>Total</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${total}</span>
+            <div class="bar-container">
+            <div class="bar" style="width: ${total/12}%; background-color: ${color};"></div>
+            </div>
+            </div>
+            </div>
             <br>
             <br>
             <br>
