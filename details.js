@@ -7,24 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await resp.json();
 
         const colors = {
-            electric: '#f7d327',
-            fighting: '#f178a1',
-            psychic: '#f68692',
-            ground: '#ef8f5d',
-            normal: '#a9aaac',
-            flying: '#a8bfeb',
-            poison: '#cb89e0',
-            dragon: '#187bcc',
-            steel: '#7dc3dd',
-            grass: '#54c364',
-            fairy: '#ffcaf8',
-            ghost: '#6078b6',
-            water: '#89cbff',
-            rock: '#d2c5a5',
-            fire: '#faab68',
-            dark: '#676371',
-            bug: '#a2e11e',
-            ice: '#87f3e4'
+            electric: '#f3d23b',
+            fighting: '#ce4069',
+            psychic: '#f97176',
+            ground: '#d97746',
+            normal: '#9099a1',
+            flying: '#92aade',
+            poison: '#ab6ac8',
+            dragon: '#096dc4',
+            steel: '#5a8ea1',
+            grass: '#63bb5b',
+            fairy: '#ec8fe6',
+            ghost: '#5269ac',
+            water: '#4d90d5',
+            rock: '#c7b78b',
+            fire: '#ff9c54',
+            dark: '#5a5366',
+            bug: '#90c12c',
+            ice: '#74cec0'
         }
 
         const imgs = {
@@ -66,9 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const img2 = imgs[secType];
 
         if (mainType == secType || secType == undefined) {
-            var pType = `<p><span class="tipo" style="background-color: ${color} opacity: 1"><img class="imgtype" src="${img1}">${mainType}</span></p>`;
+            var pType = `<p><span class="tipo" style="background-color: ${color}"><img class="imgtype" src="${img1}">${mainType}</span></p>`;
         } else {
-            pType = `<p><span class="tipo" style="background-color: ${color} opacity: 1"><img src="${img1}">${mainType}</span>
+            pType = `<p><span class="tipo" style="background-color: ${color}"><img src="${img1}">${mainType}</span>
             <span class="tipo" style="background-color: ${color2}"><img class="imgtype" src="${img2}" alt="tipo" height="15px">${secType}</span></p>
             `;
         }
