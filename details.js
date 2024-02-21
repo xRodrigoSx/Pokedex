@@ -55,10 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 return null
             }
         }
+
         let mainType = data.types[0].type.name;
         let secType = temSec();
-
-
 
         const color = colors[mainType] || '#ffffff';
         const color2 = colors[secType] || '#ffffff';
@@ -104,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <br>
             <div class="stat">
             <span>HP</span>
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hp}</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hp}</span>
             <div class="bar-container">
             <div class="bar" style="width: ${hp/2}%; background-color: ${color};"></div>
             </div>
