@@ -59,16 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let mainType = data.types[0].type.name;
         let secType = temSec();
 
+        let tipo1 = mainType[0].toUpperCase() + mainType.slice(1);
+        let tipo2 = secType[0].toUpperCase() + secType.slice(1);
+
         const color = colors[mainType] || '#ffffff';
         const color2 = colors[secType] || '#ffffff';
         const img1 = imgs[mainType];
         const img2 = imgs[secType];
 
         if (mainType == secType || secType == undefined) {
-            var pType = `<p><span class="tipo" style="background-color: ${color}"><img class="imgtype" src="${img1}">${mainType}</span></p>`;
+            var pType = `<p><span class="tipo" style="background-color: ${color}"><img class="imgtype" src="${img1}">${tipo1}</span></p>`;
         } else {
-            pType = `<p><span class="tipo" style="background-color: ${color}"><img src="${img1}">${mainType}</span>
-            <span class="tipo" style="background-color: ${color2}"><img class="imgtype" src="${img2}" alt="tipo" height="15px">${secType}</span></p>
+            pType = `<p><span class="tipo" style="background-color: ${color}"><img src="${img1}">${tipo1}</span>
+            <span class="tipo" style="background-color: ${color2}"><img class="imgtype" src="${img2}" alt="tipo" height="15px">${tipo2}</span></p>
             `;
         }
 

@@ -1,5 +1,5 @@
 const pokeContainer = document.querySelector("#pokeContainer");
-const pokemonCount = 1300
+const pokemonCount = 151
 
 const colors = {
     grass: '#54c364',
@@ -104,5 +104,106 @@ const filterPokemons = () => {
         }
     });
 };
+
+function updateMenu() {
+    var dynamicMenuElement = document.getElementById("dynamicMenu");
+
+    // Get the current screen width
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // You can set your own breakpoint values here
+    if (screenWidth < 768) {
+        dynamicMenuElement.innerHTML = generateMobileMenu();
+    } else {
+        dynamicMenuElement.innerHTML = generateDesktopMenu();
+    }
+}
+
+function generateMobileMenu() {
+    return `
+    <a href="/index.html"><img src="img/original.png" alt="Logo"/></a>
+    <div class"menu">
+        <button class="toggle-menu">&#9776;</button>
+        <div class="overlay">
+            <a class="close-btn">&times;</a>
+            <div class="menu-links">
+                <a class="scroll-down">SOBRE</a>
+                <a href="servicos.html">SERVIÇOS</a>
+                <a href="contato.html">CONTATO</a>
+            </div>
+        </div>
+        </div>
+    `;
+}
+
+function generateDesktopMenu() {
+    return `
+    <a href="index.html"><img src="img/original.png" alt="Logo"/></a>
+              <div class="menu">
+                  <a class="scroll-down">SOBRE</a>
+                  <a href="servicos.html">SERVIÇOS</a>
+                  <a href="contato.html">CONTATO</a>
+              </div>
+    `;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateMenu(); // Call the function on page load
+
+    // Listen for window resize events to update the menu dynamically
+    window.addEventListener("resize", function () {
+        updateMenu();
+    });
+
+    const button = document.querySelector(".scroll-down");
+    const screenSizeElement = document.getElementById("screenSize");
+
+    button.addEventListener("click", function () {
+        // Get the dimensions of the screen
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        var targetY;
+
+        // Define constants for readability
+        const MOBILE_BREAKPOINT = 768;
+        const SMALL_SCREEN_WIDTH = 360;
+
+        if (1870 <= screenWidth && screenWidth <= 1890) {
+            targetY = screenHeight * 0.78;
+        } else if (1700 <= screenWidth && screenWidth <= 1720) {
+            targetY = screenHeight * 0.94;
+        } else if (screenWidth === SMALL_SCREEN_WIDTH) {
+            targetY = screenHeight * 0.33;
+        } else {
+            targetY = screenHeight * 0;
+        }
+
+        screenSizeElement.textContent = `Tamanho da Tela: ${screenWidth} x ${screenHeight}`;
+
+        window.scrollTo({
+            top: targetY,
+            behavior: "smooth",
+        });
+    });
+
+    const toggleButton = document.querySelector('.toggle-menu');
+    const closeButton1 = document.querySelector('.close-btn');
+    const closeButton2 = document.querySelector('.scroll-down');
+    const menu = document.querySelector('.menu');
+
+    toggleButton.addEventListener('click', function () {
+        menu.classList.add('overlay-active');
+    });
+
+    closeButton1.addEventListener('click', function () {
+        menu.classList.remove('overlay-active');
+    });
+
+    closeButton2.addEventListener('click', function () {
+        menu.classList.remove('overlay-active');
+    });
+});
+
 
 fetchPokemons()
