@@ -131,13 +131,11 @@ h1 {
 
 .favorite-btn {
     display: none;
-    align-items: right;
     margin-left: 2.4rem;
     
     background: transparent;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     cursor: pointer;
-    line-height: 1;
     color: lightgray;
     border: none;
 }
