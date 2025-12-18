@@ -6,19 +6,19 @@ let currentSort = 'id';
 
 const colors = {
     grass: '#54c364',
-    water: '#89cbff',
+    water: '#6bb2f2',
     fire: '#faab68',
-    electric: '#eec600ff',
+    electric: '#d4b114',
     normal: '#a9aaac',
-    bug: '#a2e11e',
+    bug: '#8fcf1a',
     poison: '#cb89e0',
     ground: '#ef8f5d',
     rock: '#d2c5a5',
-    fairy: '#ffcaf8',
+    fairy: '#f2aee9',
     dragon: '#187bcc',
     psychic: '#f68692',
     flying: '#a8bfeb',
-    fighting: '#f178a1',
+    fighting: '#e65757ff',
     steel: '#7dc3dd',
     ice: '#87f3e4',
     ghost: '#6078b6',
@@ -42,6 +42,59 @@ const getPokemons = async (id) => {
     console.log(data)
 }
 
+const lightenColor = (hex, lightnessIncrease = 20) => {
+    hex = hex.replace('#', '');
+
+    const r = parseInt(hex.substring(0, 2), 16) / 255;
+    const g = parseInt(hex.substring(2, 4), 16) / 255;
+    const b = parseInt(hex.substring(4, 6), 16) / 255;
+
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+        h = s = 0;
+    } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+        switch (max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+
+        h /= 6;
+    }
+
+    l = Math.min(1, l + lightnessIncrease / 100);
+
+    const hue2rgb = (p, q, t) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p + (q - p) * 6 * t;
+        if (t < 1 / 2) return q;
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+        return p;
+    };
+
+    let r2, g2, b2;
+
+    if (s === 0) {
+        r2 = g2 = b2 = l;
+    } else {
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r2 = hue2rgb(p, q, h + 1 / 3);
+        g2 = hue2rgb(p, q, h);
+        b2 = hue2rgb(p, q, h - 1 / 3);
+    }
+
+    return `rgb(${Math.round(r2 * 255)}, ${Math.round(g2 * 255)}, ${Math.round(b2 * 255)})`;
+};
+
+
 const createPokemonCard = (poke) => {
     const card = document.createElement('div')
     card.classList.add("pokemon")
@@ -50,11 +103,20 @@ const createPokemonCard = (poke) => {
     const id = poke.id.toString().padStart(3, '0')
 
     const pokeTypes = poke.types.map(type => type.type.name)
+
     var type = mainTypes.find(type => pokeTypes.indexOf(type) == 0)
     var type2 = mainTypes.find(type => pokeTypes.indexOf(type) > 0)
-    const color = colors[type]
 
-    card.style.backgroundColor = color
+    const color1 = colors[type];
+    const color2 = type2 ? colors[type2] : null;
+
+    if (type2 && type2 !== type) {
+        const lightColor = lightenColor(color1, 12); // mais fraco
+        card.style.background = `linear-gradient(135deg, ${lightColor}, ${color1}, ${color2})`;
+    } else {
+        const lightColor = lightenColor(color1, 12); // mais fraco
+        card.style.background = `linear-gradient(135deg, ${lightColor}, ${color1})`;
+    }
 
     const createTypeBadge = (typeName) => {
         const label = typeName[0].toUpperCase() + typeName.slice(1);
@@ -82,7 +144,7 @@ const createPokemonCard = (poke) => {
             </div>
         </a>
     `
-
+    
     card.innerHTML = pokemonInnerHTML
 
     card.addEventListener('mouseover', () => {
