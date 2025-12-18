@@ -173,6 +173,29 @@ const createPokemonCard = (poke) => {
 
     card.innerHTML = pokemonInnerHTML
 
+    const favBtn = card.querySelector('.favorite-btn');
+    const favIcon = favBtn.querySelector('i');
+
+    favBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        let favorites = getFavorites();
+        const id = poke.id;
+
+        if (favorites.includes(id)) {
+            favorites = favorites.filter(favId => favId !== id);
+            favBtn.classList.remove('active');
+            favIcon.className = 'fa-regular fa-heart';
+        } else {
+            favorites.push(id);
+            favBtn.classList.add('active');
+            favIcon.className = 'fa-solid fa-heart';
+        }
+
+        saveFavorites(favorites);
+    });
+
     card.addEventListener('mouseover', () => {
         card.classList.add('highlight');
     });
@@ -237,26 +260,3 @@ document.getElementById('filterBtn').addEventListener('click', () => {
 });
 
 fetchPokemons()
-
-const favBtn = card.querySelector('.favorite-btn');
-const favIcon = favBtn.querySelector('i');
-
-favBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    let favorites = getFavorites();
-    const id = poke.id;
-
-    if (favorites.includes(id)) {
-        favorites = favorites.filter(favId => favId !== id);
-        favBtn.classList.remove('active');
-        favIcon.className = 'fa-regular fa-heart';
-    } else {
-        favorites.push(id);
-        favBtn.classList.add('active');
-        favIcon.className = 'fa-solid fa-heart';
-    }
-
-    saveFavorites(favorites);
-});
