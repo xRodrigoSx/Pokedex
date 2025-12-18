@@ -134,7 +134,9 @@ const createPokemonCard = (poke) => {
 
     var pokemonInnerHTML = `
         <div class="card-top">
-            <button class="favorite-btn" aria-label="Favoritar Pokémon">♡</button>
+            <button class="favorite-btn" aria-label="Favoritar Pokémon">
+                <i class="fa-regular fa-heart"></i>
+            </button>
             <span class="number">#${id}</span>
         </div>
 
