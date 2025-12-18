@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-weight: 500;
+}
+
+header {
+    width: 100%;
+    height: 10vw;
+    background-color: black;
+    padding: 3px 10px;
+}
+
+.logo img{
+    height: 7vw;
+    margin: 0.5vw;
+}
+
+.name {
+    margin-top: -12px;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    display: flex;
+    font-size: 4vw;
+}
+
+.id {
+    margin-top: 4px;
+}
+
+button {
+    font-size: 28px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+button img {
+    width: 12px;
+    background-color: transparent;
+}
+
+.tipo {
+    font-size: 3vw;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 0.6vw 2.1vw;
+    border-radius: 8px;
+    max-width: fit-content;
+    box-shadow: 0 3px 5px rgba(100, 100, 100, 0.5);
+}
+
+.tipo img {
+    height: 4.5vw;
+    margin-bottom: -1.1vw;
+    margin-left: -1.5vw;
+    margin-right: 0.7vw;
+}
+
+.pokemon {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px;
+    height: 200px;
+}
+
+footer {
+    width: auto;
+    border-radius: 32px 32px 0px 0px;
+}
+
+.base_stats {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px;
+}
+
+.stat {
+    display: flex;
+    margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bar-container {
+    width: 50%;
+    background: #18072a;
+    border-radius: 12px;
+}
+
+.bar {
+    border-radius: 12px;
+    text-align: right;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: white;
+}
+
+/* Tela casa */
+@media (min-width: 720px) and (max-width: 1920px) {
+    header {
+        height: 3.1vw;
+        padding: 4px 15px;
+    }
+
+    .logo img {
+        height: 2.15vw;
+        margin: 0.1vw;
+    }
+
+    .name {
+        padding: 1vw;
+        font-size: 1.8vw;
+    }
+
+    .tipo {
+        font-size: xx-large;
+        border-radius: 20px;
+        padding: 2px 15px 2px 15px;
+        margin-left: 10px;
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    }
+
+    .tipo img {
+        height: 2.2vw;
+        margin-bottom: -0.5vw;
+        margin-left: -1vw;
+        margin-right: 0.2vw;
+        padding-left: 0.3vw;
+    }
+
+    .pokemon {
+        height: 25vw;
+    }
+
+    .base_stats {
+        margin: 15px 60px;
+        width: 45%;
+    }
+}
+
+@media (orientation: landscape) {}

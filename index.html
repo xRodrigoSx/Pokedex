@@ -5,34 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/pokedex.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="icon" href="assets/img/pokedex.jpg">
     <title>Pokedex</title>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img src="img/original.png" alt="Logo" /></a>
-</header>
-<section class="sitecontainer">
-    
-    <h1>Pokedex</h1>
-    
-    <div id="searchBar">
-        <input type="text" id="searchInput" placeholder="Search any pokemon" oninput="filterPokemons()">
-    </div>
-    
-    <div class="pokeContainer" id="pokeContainer">
-        
-    </div>
-    
-    <div id="pokemonDetails" style="display: none;">
-        <h2 id="pokemonName"></h2>
-        <div id="pokemonDetailsContainer"></div>
-    </div>
-    
-    <script src="script.js"></script>
-</section>
+    </header>
+    <section class="sitecontainer">
+
+        <h1>Pokedex</h1>
+
+        <div id="searchBar">
+            <div class="search-wrapper">
+                <span class="search-icon"><i class="fa fa-search"></i></span>
+                <input type="text" id="searchInput" placeholder="       Search any pokemon" oninput="filterPokemons()" />
+            </div>
+
+            <button id="sortBtn" class="icon-btn">
+                <span class="icon">⇅</span>
+            </button>
+
+            <button id="filterBtn" class="icon-btn">
+                <span class="icon">☰</span>
+            </button>
+        </div>
+
+        <div class="pokeContainer" id="pokeContainer">
+
+        </div>
+
+        <div id="pokemonDetails" style="display: none;">
+            <h2 id="pokemonName"></h2>
+            <div id="pokemonDetailsContainer">
+                <!-- Gerado dinamicamente -->
+            </div>
+        </div>
+
+        <script src="assets/js/index.js"></script>
+    </section>
 </body>
 
 </html>
