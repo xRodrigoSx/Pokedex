@@ -133,7 +133,11 @@ const createPokemonCard = (poke) => {
     }
 
     var pokemonInnerHTML = `
-        <span class="number">#${id}</span>
+        <div class="card-top">
+            <button class="favorite-btn" aria-label="Favoritar Pokémon">♡</button>
+            <span class="number">#${id}</span>
+        </div>
+
         <a class="detalhes" href="/details.html?id=${poke.id}">
             <div class="imgContainer">
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png" alt="${name}">
@@ -144,7 +148,7 @@ const createPokemonCard = (poke) => {
             </div>
         </a>
     `
-    
+
     card.innerHTML = pokemonInnerHTML
 
     card.addEventListener('mouseover', () => {

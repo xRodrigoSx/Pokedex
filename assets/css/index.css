@@ -123,12 +123,33 @@ h1 {
     text-decoration: none;
 }
 
-.number {
-    background-color: rgba(0, 0, 0, 0.15);
-    padding: 2px 13px;
-    border-radius: 10px;
-    font-size: 0.7rem;
+.card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
+
+.favorite-btn {
+    display: none;
+    align-items: right;
+    margin-left: 2.4rem;
+    
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    color: lightgray;
+    border: none;
+}
+
+.favorite-btn.active {
+    color: #e63946;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.15);
+}
+
 
 .imgContainer {
     margin-top: 12px;
@@ -267,6 +288,10 @@ h1 {
         flex-direction: row;
         display: flex;
         gap: 0.4rem;
+    }
+
+    .favorite-btn {
+        display: block;
     }
 
     .number {
