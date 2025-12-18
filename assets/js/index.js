@@ -42,6 +42,20 @@ const getPokemons = async (id) => {
     console.log(data)
 }
 
+const FAVORITES_KEY = 'favoritePokemons';
+
+const getFavorites = () => {
+    return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+};
+
+const saveFavorites = (favorites) => {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+};
+
+const isFavorite = (id) => {
+    return getFavorites().includes(id);
+};
+
 const lightenColor = (hex, lightnessIncrease = 20) => {
     hex = hex.replace('#', '');
 
@@ -132,10 +146,16 @@ const createPokemonCard = (poke) => {
         pType += createTypeBadge(type2);
     }
 
+    const favorite = isFavorite(poke.id);
+
+    const heartIconClass = favorite
+        ? 'fa-solid fa-heart'
+        : 'fa-regular fa-heart';
+
     var pokemonInnerHTML = `
         <div class="card-top">
-            <button class="favorite-btn" aria-label="Favoritar Pokémon">
-                <i class="fa-regular fa-heart"></i>
+            <button class="favorite-btn ${favorite ? 'active' : ''}" data-id="${poke.id}">
+                <i class="${heartIconClass}"></i>
             </button>
             <span class="number">#${id}</span>
         </div>
@@ -217,3 +237,26 @@ document.getElementById('filterBtn').addEventListener('click', () => {
 });
 
 fetchPokemons()
+
+const favBtn = card.querySelector('.favorite-btn');
+const favIcon = favBtn.querySelector('i');
+
+favBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    let favorites = getFavorites();
+    const id = poke.id;
+
+    if (favorites.includes(id)) {
+        favorites = favorites.filter(favId => favId !== id);
+        favBtn.classList.remove('active');
+        favIcon.className = 'fa-regular fa-heart';
+    } else {
+        favorites.push(id);
+        favBtn.classList.add('active');
+        favIcon.className = 'fa-solid fa-heart';
+    }
+
+    saveFavorites(favorites);
+});
