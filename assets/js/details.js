@@ -60,19 +60,35 @@ document.addEventListener('DOMContentLoaded', () => {
         let secType = temSec();
 
         let tipo1 = mainType[0].toUpperCase() + mainType.slice(1);
-        let tipo2 = secType[0].toUpperCase() + secType.slice(1);
+        let tipo2 = secType
+            ? secType[0].toUpperCase() + secType.slice(1)
+            : null;
 
         const color = colors[mainType] || '#ffffff';
         const color2 = colors[secType] || '#ffffff';
         const img1 = imgs[mainType];
         const img2 = imgs[secType];
 
-        if (mainType == secType || secType == undefined) {
-            var pType = `<p><span class="tipo" style="background-color: ${color}"><img class="imgtype" src="${img1}">${tipo1}</span></p>`;
+        if (!secType || mainType === secType) {
+            var pType = `
+        <p>
+            <span class="tipo" style="background-color: ${color}">
+                <img class="imgtype" src="${img1}">
+                ${tipo1}
+            </span>
+        </p>`;
         } else {
-            pType = `<p><span class="tipo" style="background-color: ${color}"><img src="${img1}">${tipo1}</span>
-            <span class="tipo" style="background-color: ${color2}"><img class="imgtype" src="${img2}" alt="tipo" height="15px">${tipo2}</span></p>
-            `;
+            pType = `
+        <p>
+            <span class="tipo" style="background-color: ${color}">
+                <img class="imgtype" src="${img1}">
+                ${tipo1}
+            </span>
+            <span class="tipo" style="background-color: ${color2}">
+                <img class="imgtype" src="${img2}">
+                ${tipo2}
+            </span>
+        </p>`;
         }
 
         const hp = data.stats[0].base_stat;
@@ -108,49 +124,49 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>HP</span>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hp}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${hp/2.55}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${hp / 2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Attack</span>
             <span>&nbsp;&nbsp;&nbsp;${attack}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${attack/2.55}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${attack / 2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Defense</span>
             <span>${defense}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${defense/2.55}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${defense / 2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Speed</span>
             <span>&nbsp;&nbsp;&nbsp;${speed}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${speed/2.55}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${speed / 2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Sp. Atk</span>
             <span>&nbsp;&nbsp;${sp_attack}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${sp_attack/2.55}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${sp_attack / 2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Sp. Def</span>
             <span>&nbsp;${sp_defense}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${sp_defense/2.55}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${sp_defense / 2.55}%; background-color: ${color};"></div>
             </div>
             </div>
             <div class="stat">
             <span>Total</span>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${total}</span>
             <div class="bar-container">
-            <div class="bar" style="width: ${total/15}%; background-color: ${color};"></div>
+            <div class="bar" style="width: ${total / 15}%; background-color: ${color};"></div>
             </div>
             </div>
             </div>
